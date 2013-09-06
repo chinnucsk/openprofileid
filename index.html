@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="http://ad.adsrvr.org/m/open-profile.js"></script>
+</head>
+<body>
+<p>ID: <span id="op-id"></span></p>
+<p>Version: <span id="op-version"></span></p>
+<p>Site: <span id="op-site"></span></p>
+<script>
+document.getElementById("op-id").innerHTML = OpenProfileId.getId();
+document.getElementById("op-version").innerHTML = OpenProfileId.getVersion();
+document.getElementById("op-site").innerHTML = OpenProfileId.getSite();
+
+var url = "http://view.adsrvr.org/track/stat?ttd_statid=" + OpenProfileId.getVersion() + '-' + OpenProfileId.getId();
+var img = new Image();
+img.src = url;
+document.body.appendChild(img);
+
+</script>
+</body>
+</html>
